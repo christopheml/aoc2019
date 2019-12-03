@@ -1,4 +1,4 @@
-package day01
+package com.github.christopheml.day01
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest

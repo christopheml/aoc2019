@@ -1,4 +1,4 @@
-package day01
+package com.github.christopheml.day01
 
 import com.github.christopheml.common.PuzzleInput
 
