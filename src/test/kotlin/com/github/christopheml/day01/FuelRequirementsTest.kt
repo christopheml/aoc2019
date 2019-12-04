@@ -13,7 +13,7 @@ class FuelRequirementsTest {
         }
     }
 
-    private fun providedExamples() = Stream.of(
+    private fun part1ProvidedExamples() = Stream.of(
         FuelRequired(12, 2),
         FuelRequired(14, 2),
         FuelRequired(1969, 654),
@@ -21,9 +21,21 @@ class FuelRequirementsTest {
     )
 
     @ParameterizedTest
-    @MethodSource("providedExamples")
-    internal fun `acceptance test`(example: FuelRequired) {
+    @MethodSource("part1ProvidedExamples")
+    internal fun `part 1 acceptance test`(example: FuelRequired) {
         assertThat(fuelRequirementFor(example.mass)).isEqualTo(example.expectedFuel)
+    }
+
+    private fun part2ProvidedExamples() = Stream.of(
+            FuelRequired(14, 2),
+            FuelRequired(1969, 966),
+            FuelRequired(100756, 50346)
+    )
+
+    @ParameterizedTest
+    @MethodSource("part2ProvidedExamples")
+    internal fun `part 2 acceptance test`(example: FuelRequired) {
+        assertThat(completeFuelRequirementFor(example.mass)).isEqualTo(example.expectedFuel)
     }
 
 }
