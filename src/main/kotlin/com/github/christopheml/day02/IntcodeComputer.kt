@@ -4,7 +4,7 @@ import com.github.christopheml.common.PuzzleInput
 
 class IntcodeComputer {
 
-    fun run(program: IntcodeProgram) {
+    internal fun run(program: IntcodeProgram) {
         var position = 0
         var opcode = 0
         while (true) {
@@ -24,14 +24,20 @@ class IntcodeComputer {
         }
     }
 
+    fun runWithInputs(program: IntcodeProgram, input1: Int, input2: Int): Int {
+        val programCopy = IntcodeProgram(program)
+        programCopy.setValue(1, input1)
+        programCopy.setValue(2, input2)
+        run(programCopy)
+        return programCopy.valueAt(0)
+    }
+
 }
 
 fun main() {
     val instructions = PuzzleInput(2).asSingleLine().split(",").map { it.toInt() }
     val program = IntcodeProgram(instructions)
     val computer = IntcodeComputer()
-    program.setValue(1, 12)
-    program.setValue(2, 2)
-    computer.run(program)
-    println("The value left at position 0 is " + program.valueAt(0))
+    val result = computer.runWithInputs(program, 12, 2)
+    println("The value left at position 0 is $result")
 }

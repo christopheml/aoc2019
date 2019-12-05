@@ -4,6 +4,8 @@ class IntcodeProgram(instructions: List<Int>) {
 
     private val instructions: MutableList<Int> = instructions.toMutableList()
 
+    constructor(another: IntcodeProgram) : this(another.instructions)
+
     fun valueAt(position: Int): Int {
         return instructions[position]
     }
