@@ -24,10 +24,10 @@ class IntcodeComputer {
         }
     }
 
-    fun runWithInputs(program: IntcodeProgram, input1: Int, input2: Int): Int {
+    fun runWithInputs(program: IntcodeProgram, noun: Int, verb: Int): Int {
         val programCopy = IntcodeProgram(program)
-        programCopy.setValue(1, input1)
-        programCopy.setValue(2, input2)
+        programCopy.setValue(1, noun)
+        programCopy.setValue(2, verb)
         run(programCopy)
         return programCopy.valueAt(0)
     }
