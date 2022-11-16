@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.7.21"
 }
 
 repositories {
@@ -21,5 +21,5 @@ tasks.test {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "10"
+    kotlinOptions.jvmTarget = "18"
 }

@@ -6,7 +6,7 @@ class IntcodeComputer {
 
     internal fun run(program: IntcodeProgram) {
         var position = 0
-        var opcode = 0
+        var opcode: Int
         while (true) {
             opcode = program.valueAt(position)
             if (opcode == 99) {
